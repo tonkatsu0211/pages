@@ -1,0 +1,30 @@
+<div class="main">
+  <div class="a00">
+    <h1><%= top %></h1>
+    <button id="reloadButton" class="normalButton" onclick="
+  const page = '<%= page %>';
+  const em = '<%= em %>'
+  document.getElementById('reloadButton').textContent = '再読み込み中...';
+  fetch('/log', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ message: 'reload on /<%= page %> ... OK' })
+  }).then(() => {
+    location.href = '<%= em === `true` ? `/empass/${page}` : `/${page}` %>'
+  });
+">
+  ページを再読み込み
+</button>
+</div>
+<h1 style="font-size: 30px; font-weight: bold; color: #ff0000;">
+  Glitchのサービス終了(7/8)に伴い、このページは7/5ごろに停止し、Renderに移設する予定です。
+</h1>
+<h1 style="font-size: 30px; font-weight: bold; color: #ff0000;">
+  Renderのサイトは7/2ごろから稼働する予定です。
+</h1>
+<h1 style="font-size: 20px; font-weight: bold; color: #ff0000;">
+  Renderが開けない場合は<a href="https://fuck-hugo.global.ssl.fastly.net/edu" target="_blank" style="color: #ff0000; text-decoration: none; border-bottom: 1px solid #ff0000;">Ghost</a>や
+  <a href="https://skibidi.global.ssl.fastly.net" target="_blank" style="color: #ff0000; text-decoration: none; border-bottom: 1px solid #ff0000;">Ultraviolet</a>などのプロキシを使って開いてください。
+</h1>
+<br>
+<br>

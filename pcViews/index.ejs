@@ -1,0 +1,59 @@
+<%- include("settings/header") %>
+<%- include("settings/nav") %>
+<%- include("settings/top") %>
+
+      <% if (from) { %>
+        <h2
+          style="color: red; font-weight: bold;">
+          ※<%= from %>.glitch.me は tonkatsu0211.glitch.me に移設されました。
+        </h2>
+        <h2
+          style="color: red; font-weight: bold;">
+          ブックマーク等している場合は変更をお願いします。
+        </h2>
+      <% } %>
+  
+      <p>
+        このページは_tonkatsu_(tonkatsu0211)が勝手にいろいろ書いてるページです。
+      </p>
+      <p>上のタブか下のボタンから各ページに移動できます。</p>
+      <br>
+      <h2>
+        <button onclick="location.href='/my'" class="blueButton30">
+          自己紹介
+        </button>
+      </h2>
+      <h2>
+        <button onclick="location.href='/projects'" class="blueButton30" style="background-color: #ffff00; color: #000000 !important;">
+          作品
+        </button>
+      </h2>
+      <h2>
+        <button onclick="location.href='/contact'" class="blueButton30">
+          お問い合わせ
+        </button>
+      </h2>
+      <h2>
+        <button onclick="location.href='/games'" class="blueButton30">
+          ゲームをプレイ
+        </button>  
+      </h2>
+      <h2>
+        <button onclick="location.href='/chat'" class="blueButton30" style="background-color: #30cc30 !important;">
+          tonkatsuチャット
+        </button>  
+      </h2>
+      <h2>
+        <button onclick="location.href='/updates'" class="blueButton30">
+          更新履歴
+        </button>
+      </h2>
+      <h2>
+        <button onclick="location.href='/beforeBreak'" class="warnButton3">
+          履歴破壊
+        </button>
+      </h2>
+      <br>
+    </div>
+
+<%- include("settings/footer") %>

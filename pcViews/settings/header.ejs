@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/pcStyle.css" />
+    <link
+      rel="icon"
+      href="https://cdn.glitch.global/76a1f4d2-2815-4fbf-afcd-888d6db7e806/icon.png?v=1749463611859"
+      type="image/png"
+    />
+    <link
+      rel="icon"
+      href="https://cdn.glitch.global/76a1f4d2-2815-4fbf-afcd-888d6db7e806/icon.ico?v=1749512639750"
+      type="image/x-icon"
+    />
+    <script>
+      if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+      }
+      window.addEventListener("beforeunload", () => {
+        window.scrollTo(0, 0);
+      });
+    </script>
+  </head>
+  <body>
+    <header>_tonkatsu_ / tonkatsu0211のページ</header>

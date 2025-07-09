@@ -1,0 +1,22 @@
+<div class="nav">
+  <a href="<%= em === 'true' ? '/empass' : '/' %>" class="<%= page === 'index' ? 'active' : '' %>">TOP</a>
+  <a href="<%= em === 'true' ? '/empass/my' : '/my' %>" class="<%= page === 'my' ? 'active' : '' %>">自己紹介</a>
+  <a href="<%= em === 'true' ? '/empass/projects' : '/projects' %>" class="<%= page === 'projects' ? 'active' : '' %>">作品</a>
+  <a href="<%= em === 'true' ? '/empass/contact' : '/contact' %>" class="<%= page === 'contact' ? 'active' : '' %>">お問い合わせ</a>
+  <a href="<%= em === 'true' ? '/empass/games' : '/games' %>" class="<%= page === 'games' ? 'active' : '' %>">ゲーム</a>
+  <a href="<%= em === 'true' ? '/empass/chat' : '/chat' %>" class="<%= page === 'chat/lobby' || page === 'chat/main' || page === 'chat' || page === 'chat/login' || page === 'chat/signup' || page === 'chat/rules' || page === 'chat/ban' ? 'active' : '' %>">チャット</a>
+  <a href="<%= em === 'true' ? '/empass/updates' : '/updates' %>" class="<%= page === 'updates' ? 'active' : '' %>">更新履歴</a>
+  <a href="<%= em === 'true' ? '/empass/beforeBreak' : '/beforeBreak' %>" class="<%= page === 'beforeBreak' ? 'active' : '' %>">履歴破壊</a>
+  
+  <% if (page === 'constructing') { %>
+    <a href="<%= em === 'true' ? '/empass/constructing' : '/constructing' %>" class="active">建設中</a>
+  <% } %>
+    
+  <% if (page === 'constructing1') { %>
+    <a href="<%= em === 'true' ? '/empass/constructing1' : '/constructing1' %>" class="active">建設中</a>
+  <% } %>
+
+  <% if (page === 'error') { %>
+    <a href="<%= em === 'true' ? '/empass/error' : '/error' %>" class="active">404</a>
+  <% } %>
+</div>

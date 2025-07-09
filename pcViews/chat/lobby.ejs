@@ -1,0 +1,34 @@
+<%- include("../settings/header") %>
+<%- include("../settings/nav") %>
+<%- include("../settings/top") %>
+  
+      <p>下のボタンから各チャットページに移動できます。</p>
+      <br>
+      <h2 style="color: #ff0000; display: none;" id="fromBanText">
+        バグによりBANページが表示されてしまい、申し訳ありませんでした。
+      </h2>
+      <h2>
+        <button onclick="location.href='/chat/rules'" class="warnButton3">
+          利用規約
+        </button>
+      </h2>
+      <h2>
+        <button onclick="location.href='/chat/login'" class="blueButton30">
+          ログイン(既にアカウントを作成している人向け)
+        </button>
+      </h2>
+      <h2>
+        <button onclick="location.href='/chat/signup'" class="blueButton30">
+          サインアップ(まだアカウントを持っていない人向け)
+        </button>  
+      </h2>
+      <br>
+    </div>
+  
+  <script>
+    if ("<%= from %>" == "ban") {
+      document.getElementById("fromBanText").style.display = "inline";
+    }
+    
+  </script>
+<%- include("../settings/footer") %>

@@ -1,0 +1,51 @@
+<%- include("settings/header") %>
+<%- include("settings/nav") %>
+
+    <div class="main">
+      <img
+        src="https://cdn.glitch.global/76a1f4d2-2815-4fbf-afcd-888d6db7e806/Not Found.png?v=1749532095238"
+        width="1000"
+      />
+      <h1 id="text">このページはURLが変更されたか存在しません。</h1>
+      <h3 id="error"></h3>
+      <h3 id="hiddenErrorText">
+        あなた、意図的にこのサイトにアクセスしたか404のタブをクリックしましたね?ご褒美に履歴を404で埋め尽くしてあげます。
+      </h3>
+      <h2>
+        <button onclick="location.href='/'" class="blueButton30">
+          トップページに戻る
+        </button>
+      </h2>
+      <h2>
+        <button onclick="location.reload()" class="blueButton30" id="errorReload">
+          当該ページに再アクセス(404が再表示される可能性が高いです)
+        </button>
+      </h2>
+    </div>
+  
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const e = params.get("e");
+
+    if (e) {
+      const accessURL = `${location.origin}/${e}`;
+      document.getElementById("error").textContent = `アクセスしたURL: ${accessURL}`;
+      document.getElementById("hiddenErrorText").style.display = "none";
+      document.getElementById("errorReload").onclick = function () {
+        location.href = accessURL;
+      };
+    } else if ("<%= ec %>" !== "none"){
+      const accessURL = `${location.origin}/<%= ec %>`
+      document.getElementById("error").textContent = `アクセスしたURL: ${accessURL}`;
+      document.getElementById("hiddenErrorText").style.display = "none";
+      document.getElementById("errorReload").onclick = function () {
+        location.href = accessURL;
+      };
+    } else {
+      document.getElementById("error").style.display = "none";
+      document.getElementById("hiddenErrorText").style.display = "inline";
+      document.getElementById("errorReload").style.display = "none";
+    }
+  </script>
+
+<%- include("settings/footer") %>
