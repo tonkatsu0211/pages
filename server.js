@@ -3,6 +3,7 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const cookieParser = require("cookie-parser");
+/*
 const session = require("express-session");
 const bcrypt = require("bcrypt");
 const fs = require("fs");
@@ -709,21 +710,7 @@ app.use(
     resave: false,
     saveUninitialized: false,
   })
-);
-
-app.use(cookieParser());
-
-app.use(express.static("public"));
-
-app.set("view engine", "ejs");
-app.set("views", path.join(__dirname, "pcViews"));
-
-app.use(express.json());
-
-app.post("/log", (req, res) => {
-  console.log(req.body.message);
-  res.json({ status: "ok" });
-});
+); 
 
 app.get('/users', (req, res) => {
   fs.readFile(usersPath, 'utf8', (err, data) => {
@@ -743,6 +730,21 @@ app.get('/users', (req, res) => {
       res.status(500).json({ error: 'JSONパースエラー' });
     }
   });
+});
+*/
+
+app.use(cookieParser());
+
+app.use(express.static("public"));
+
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "pcViews"));
+
+app.use(express.json());
+
+app.post("/log", (req, res) => {
+  console.log(req.body.message);
+  res.json({ status: "ok" });
 });
 
 function render(req, res, view, data = {}, locate = "") {
@@ -767,6 +769,7 @@ function render(req, res, view, data = {}, locate = "") {
   });
 }
 
+/*
 app.post(["/chat/logout", "/chat/logout.html"], (req, res) => {
   console.log("logout: ", req.cookies.user)
   res.clearCookie("user");
@@ -775,9 +778,10 @@ app.post(["/chat/logout", "/chat/logout.html"], (req, res) => {
     res.redirect("/chat/login?f=logout");
   });
 });
+*/
 
 app.use("/games", require("./routes/games"));
-app.use("/chat", require("./routes/chat"));
+//app.use("/chat", require("./routes/chat"));
 
 app.get(["/", "/index", "/top", "/index.html"], (req, res) => {
   const from = req.query.f || "";
